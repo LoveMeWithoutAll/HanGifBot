@@ -1,0 +1,6 @@
+applications:
+- name: hangifbot
+  instances: 1
+  memory: 128M
+  disk_quota: 1024M
+  no-route: true  
