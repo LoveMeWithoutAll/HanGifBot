@@ -1,0 +1,38 @@
+{
+  "name": "hangifbot",
+  "version": "0.0.1",
+  "description": "gif search by korean widget linked to your telegram messenger",
+  "main": "bot.js",
+  "dependencies": {
+    "install": "^0.8.7",
+    "node-bing-api": "^3.2.1",
+    "node-telegram-bot-api": "^0.27.0",
+    "npm": "^4.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoveMeWithoutAll/HanGifBot.git"
+  },
+  "author": {
+    "name": "YoungSeon.Ahn",
+    "email": "ys.ahn@outlook.com",
+    "url": "https://github.com/LoveMeWithoutAll"
+  },
+  "keywords": [
+    "gif",
+    "search",
+    "telegram",
+    "bot",
+    "korean"
+  ],
+  "author": "ys.ahn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LoveMeWithoutAll/HanGifBot/issues"
+  },
+  "homepage": "https://github.com/LoveMeWithoutAll/HanGifBot#readme"
+}
