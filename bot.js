@@ -53,6 +53,7 @@ bot.on('inline_query', function(msg)
                 'gif_url': q_result[i].contentUrl,
                 'thumb_url': q_result[i].thumbnailUrl,
                 'id': q_result[i].imageId,
+                'caption': qs.unescape(q_query),
                 'gif_width': 48,
                 'gif_height': 48
             };
