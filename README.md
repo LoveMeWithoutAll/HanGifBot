@@ -1,12 +1,10 @@
-HanGifBot-in-telegram([@hangifbot](https://t.me/hangifbot))
-===================
-
-----------
+#HanGifBot-in-telegram([@hangifbot](https://t.me/hangifbot))
 
 Introduction
 -------------
 
 gif를 한글로 검색해 보여주는 텔레그램 인라인봇
+
 Search gif on Telegram inline by korean
 
 ----------
