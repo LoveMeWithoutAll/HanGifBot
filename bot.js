@@ -6,7 +6,7 @@ var Bing = require('node-bing-api')({ accKey: "" });
 
 function bingImageSearch(query, callback){
     Bing.images(query, {
-    top: 4,   // Number of results (max 50) 
+    top: 12,   // Number of results (max 50) 
     imageType: 'AnimatedGif'
     }, function(error, res, body){
         console.log('여기서 시작. 검색어는 ' + query);
