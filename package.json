@@ -18,11 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/LoveMeWithoutAll/HanGifBot.git"
   },
-  "author": {
-    "name": "YoungSeon.Ahn",
-    "email": "ys.ahn@outlook.com",
-    "url": "https://github.com/LoveMeWithoutAll"
-  },
+  "author": "ys.ahn",
   "keywords": [
     "gif",
     "search",
@@ -30,7 +26,6 @@
     "bot",
     "korean"
   ],
-  "author": "ys.ahn",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/LoveMeWithoutAll/HanGifBot/issues"
