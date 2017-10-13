@@ -2,7 +2,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = '331577450:AAGDlpOzGyeJ3fjFPXc35ydg8PPni9nLtYs';
 const bot = new TelegramBot(token, {polling: true});
 
-var Bing = require('node-bing-api')({ accKey: "423008762e8f4cfa953d5304aa8b7863" });
+var Bing = require('node-bing-api')({ accKey: "" });
 
 function bingImageSearch(query, callback){
     Bing.images(query, {
