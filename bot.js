@@ -37,8 +37,6 @@ bot.on('inline_query', function(msg)
     if(msg.query == '') return;
     
     var q_query = msg.query;
-    var qs = require('querystring');
-    q_query = qs.escape(q_query);
     
     bingImageSearch(q_query, function(q_result){
         
@@ -53,7 +51,7 @@ bot.on('inline_query', function(msg)
                 'gif_url': q_result[i].contentUrl,
                 'thumb_url': q_result[i].thumbnailUrl,
                 'id': q_result[i].imageId,
-                'caption': qs.unescape(q_query),
+                'caption': q_query,
                 'gif_width': 48,
                 'gif_height': 48
             };
