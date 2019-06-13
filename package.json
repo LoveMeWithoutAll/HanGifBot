@@ -1,6 +1,6 @@
 {
   "name": "hangifbot",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "gif search by korean widget linked to your telegram messenger",
   "main": "bot.js",
   "dependencies": {
@@ -18,11 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/LoveMeWithoutAll/HanGifBot.git"
   },
-  "author": {
-    "name": "YoungSeon.Ahn",
-    "email": "ys.ahn@outlook.com",
-    "url": "https://github.com/LoveMeWithoutAll"
-  },
+  "author": "ys.ahn",
   "keywords": [
     "gif",
     "search",
