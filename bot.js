@@ -14,13 +14,6 @@ function bingImageSearch(query, callback){
     });
 }
 
-bot.onText(/\/echo (.+)/, (msg, match) => {
-    const chatId = msg.chat.id;
-    const resp = match[1];
-    
-    bot.sendMessage(chatId, resp);
-});
-
 bot.on('message', (msg) => {
    const chatId = msg.chat.id;
    
