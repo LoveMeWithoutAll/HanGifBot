@@ -1,8 +1,8 @@
-const TelegramBot = require('node-telegram-bot-api');
+const TelegramBot = require('telegraf');
 const token = '331577450:AAGDlpOzGyeJ3fjFPXc35ydg8PPni9nLtYs';
-const bot = new TelegramBot(token, {polling: true});
+const bot = new TelegramBot(token);
 
-var Bing = require('node-bing-api')({ accKey: "" });
+const Bing = require('node-bing-api')({ accKey: "" });
 
 function bingImageSearch(query, callback){
     Bing.images(query, {
@@ -14,40 +14,26 @@ function bingImageSearch(query, callback){
     });
 }
 
-bot.onText(/\/echo (.+)/, (msg, match) => {
-    const chatId = msg.chat.id;
-    const resp = match[1];
-    
-    bot.sendMessage(chatId, resp);
+bot.on('message', async ctx => {
+    await ctx.reply('이 봇은 인라인봇입니다.')
+    await ctx.reply('채팅창에 @hangifbot 검색어 를 입력하세요!')
 });
 
-bot.on('message', (msg) => {
-   const chatId = msg.chat.id;
-   
-   bot.sendMessage(chatId, '이 봇은 인라인봇입니다.');
-   bot.sendMessage(chatId, '채팅창에 @hangifbot 검색어 를 입력하세요!');
-});
+bot.on('inline_query', async ({ inlineQuery, answerInlineQuery}) => {
+    if (inlineQuery.query == '') return;
 
-bot.getMe().then(function(me){
-   console.log('it is me: ' +me) ;
-});
+    const q_query = inlineQuery.query;
 
-bot.on('inline_query', function(msg)
-{
-    if(msg.query == '') return;
-    
-    var q_query = msg.query;
-    
-    bingImageSearch(q_query, function(q_result){
-        
-        var q_id = msg.id;
-        var results = []; 
-        
-        if( q_result == undefined ) return bot.answerInlineQuery(q_id, results);
-        
-        for (var i = 0; i < q_result.length; ++i) {
-            var InlineQueryResultGif = {
-                'type': 'gif', 
+    bingImageSearch(q_query, (q_result) => {
+
+        const q_id = inlineQuery.id;
+        let results = [];
+
+        if (q_result == undefined) return answerInlineQuery(results);
+
+        for (let i = 0; i < q_result.length; ++i) {
+            const InlineQueryResultGif = {
+                'type': 'gif',
                 'gif_url': q_result[i].contentUrl,
                 'thumb_url': q_result[i].thumbnailUrl,
                 'id': q_result[i].imageId,
@@ -58,7 +44,8 @@ bot.on('inline_query', function(msg)
             results.push(InlineQueryResultGif);
         }
         console.log(results);
-        bot.answerInlineQuery(q_id, results);
+
+        answerInlineQuery(results);
     });
 });
 
@@ -66,3 +53,5 @@ bot.on('chosen_inline_result', function(msg)
 {
     console.log('Chosen:' + msg);
 });
+
+bot.launch();
